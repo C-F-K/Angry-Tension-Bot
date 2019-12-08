@@ -135,6 +135,6 @@ client.on("message", async message => {
   }
 });
 
-let token = Buffer.from(config.token, 'base64').toString('ascii');
+let token = Buffer(config.token, 'base64').toString('ascii');
 console.log(token);
 client.login(token);
