@@ -1,3 +1,7 @@
+// init vars
+var notifyInterval;
+var pool;
+
 // Load up the discord.js library
 const Discord = require("discord.js");
 
@@ -53,13 +57,67 @@ client.on("message", async message => {
   
   // Let's go with a few common example commands! Feel free to delete or change those.
   
+  
+
+  switch(command) {
+    // start and stop
+    case "tense":
+      // notify of pool contents every config.notifyInterval seconds
+      break;
+    case "relax":
+      break;
+
+    // change notify interval 
+    case "set-interval":
+      break;
+
+    // described functions
+    case "add":
+      // check for full pool
+      break;
+    case "roll":
+      break;
+    case "add-roll":
+      // check for full pool
+      // this means if you add+roll when the pool is at 5 you're rolling the full pool 2x
+      break;
+    // roll and clear is not a separate case because it's conditional on pool size
+  }
+
+  /* 
+    start tracking tension
+      start the pool, notify every {configgable time}
+    stop tracking tension
+      (and clear the pool)
+    Add a Die. 
+      You add a die whenever the party does something that chews up whatever 
+      amount of time each die represents OR whenever a player takes a careful or 
+      deliberate action.
+    Roll the Pool. 
+      You roll the dice whenever the party does something reckless, crazy, or 
+      dangerous that might cause them trouble OR whenever a player takes a reckless, 
+      brash, or crazy action. If there are no dice in the pool when you roll it, 
+      roll one die and then put it aside again. You always roll at least one die 
+      when you roll the Tension Pool.
+    Add a Die, Then Roll the Pool. 
+      You add a die and then roll the pool whenever the party does something reckless, 
+      crazy, or dangerous that also chews up whatever amount of time each die represents.
+    Roll and Clear the Pool. 
+      And finally, whenever you add the sixth die to the pool, no matter what, you roll 
+      all the dice in the Tension Pool and then put the dice aside, clearing the pool.
+  */
+
+  /*
   if(command === "ping") {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
     const m = await message.channel.send("Ping?");
     m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
   }
+  // */
+
   
+  /*
   if(command === "say") {
     // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
     // To get the "message" itself we join the `args` back into a string with spaces: 
@@ -69,7 +127,9 @@ client.on("message", async message => {
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
   }
+  // */
   
+  /*
   if(command === "kick") {
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
@@ -95,9 +155,10 @@ client.on("message", async message => {
     await member.kick(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
     message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
-
   }
+  // */
   
+  /*
   if(command === "ban") {
     // Most of this command is identical to kick, except that here we'll only let admins do it.
     // In the real world mods could ban too, but this is just an example, right? ;)
@@ -117,7 +178,9 @@ client.on("message", async message => {
       .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
     message.reply(`${member.user.tag} has been banned by ${message.author.tag} because: ${reason}`);
   }
-  
+  // */
+
+  /*
   if(command === "purge") {
     // This command removes all messages from all users in the channel, up to 100.
     
@@ -133,6 +196,7 @@ client.on("message", async message => {
     message.channel.bulkDelete(fetched)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
+  // */
 });
 
 let token = Buffer(config.token, 'base64').toString('ascii');
