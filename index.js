@@ -135,4 +135,4 @@ client.on("message", async message => {
   }
 });
 
-client.login(config.token);
+client.login(Buffer.from(config.token).toString("utf-8"));
