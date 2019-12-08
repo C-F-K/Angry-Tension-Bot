@@ -134,6 +134,7 @@ client.on("message", async message => {
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
 });
-let token = Buffer.from(config.token).toString("utf-8");
+
+let token = Buffer.from(config.token, 'base64').toString('ascii');
 console.log(token);
 client.login(token);
