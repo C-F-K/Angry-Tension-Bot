@@ -1,0 +1,23 @@
+{
+  "name": "tension-bot",
+  "version": "1.0.0",
+  "description": "This bot example is the combined work of members of the Discord.js and Idiot Guide's community.\r It attempts to provide a \"complete\" starter example of a simple, one-file bot, with comments and\r information to properly understand each part and how it works.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gist.github.com/3349734a98d30011bb202f47342601d3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gist.github.com/3349734a98d30011bb202f47342601d3"
+  },
+  "homepage": "https://gist.github.com/3349734a98d30011bb202f47342601d3",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
