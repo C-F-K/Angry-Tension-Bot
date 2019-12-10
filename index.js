@@ -13,7 +13,8 @@ const isNumeric = (n) => {
 }
 
 const poolNotify = (message) => {
-    message.channel.send("_Tension pool currently contains " + pool + " dice._");
+    let plural = pool > 1 ? "dice" : die;
+    message.channel.send("_Tension pool currently contains " + pool + " " + plural + "._");
 }
 
 // Load up the discord.js library
@@ -83,6 +84,7 @@ client.on("message", async message => {
                 if (intervalId) {
                     clearInterval(intervalId);
                     intervalId = setInterval(poolNotify, notifyInterval * 1e3, message);
+                    message.channel.send("_Notify interval set to " + notifyInterval + " seconds_");
                 }
             } else {
                 message.channel.send("_Bad or missing argument_");
