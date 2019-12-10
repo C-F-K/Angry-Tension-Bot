@@ -13,7 +13,7 @@ const isNumeric = (n) => {
 }
 
 const poolNotify = (message) => {
-    message.channel.send("_Tension pool currently contains " + pool + "dice._");
+    message.channel.send("_Tension pool currently contains " + pool + " dice._");
 }
 
 // Load up the discord.js library
