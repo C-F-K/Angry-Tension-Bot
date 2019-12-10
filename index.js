@@ -13,7 +13,7 @@ const isNumeric = (n) => {
 }
 
 const poolNotify = (message) => {
-    let plural = pool > 1 ? "dice" : "die";
+    let plural = pool == 1 ? "die" : "dice";
     message.channel.send("_Tension pool currently contains " + pool + " " + plural + "._");
 }
 
